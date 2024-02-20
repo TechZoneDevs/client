@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Home(){
+export default function Favoritos(){
     return(
         <h1>
-            Hello from Home
+            Hello from Favoritos
         </h1>
     );
 };

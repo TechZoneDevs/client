@@ -5,8 +5,8 @@ const Login = async () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    const onSubmit = async (data) => {
-       console.log('holi')
+    const onSubmit = async (data: object) => {
+       console.log('Data sumiteada')
     };
 
     const togglePasswordVisibility = () => {
