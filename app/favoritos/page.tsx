@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Prueba(){
+export default function Home(){
     return(
         <h1>
-            Hello from Prueba
+            Hello from Home
         </h1>
     );
 };
