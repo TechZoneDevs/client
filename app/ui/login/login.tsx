@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -5,7 +6,7 @@ const Login = async () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data: object) => {
        console.log('holi')
     };
 
