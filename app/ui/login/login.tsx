@@ -7,7 +7,7 @@ const Login = async () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = async (data: object) => {
-       console.log('holi')
+       console.log('Data sumiteada')
     };
 
     const togglePasswordVisibility = () => {
