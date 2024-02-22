@@ -9,6 +9,11 @@ export default function Home() {
   return (
     <div className = {styles.holeContainer}>
       <Image src={banner} alt = 'Banner' width = {1150} height = {400}/>
+      <div className = {styles.pruebaColor}>
+        <h1>
+          Color Prueba
+        </h1>
+      </div>
 
     </div>
   );
