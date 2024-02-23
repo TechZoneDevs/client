@@ -7,10 +7,16 @@ import styles from './landing.module.css';
 import banner from '../public/logos/bannerGif.gif'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { decrement, increment } from "@/redux/features/counterSlice";
+import { useGetUsersQuery } from "@/redux/services/getUser";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
   const dispatch = useAppDispatch()
+
+  const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
+
+  if (isLoading || isFetching) return <p>loading...</p>;
+  if (error) return <p>some error</p>;
 
   return (
     <div className = {styles.holeContainer}>
