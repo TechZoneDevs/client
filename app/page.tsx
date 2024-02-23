@@ -13,10 +13,10 @@ export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
   const dispatch = useAppDispatch()
 
-  const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
+  //const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
 
-  if (isLoading || isFetching) return <p>loading...</p>;
-  if (error) return <p>some error</p>;
+//  if (isLoading || isFetching) return <p>loading...</p>;
+//  if (error) return <p>some error</p>;
 
   return (
     <div className = {styles.holeContainer}>
