@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './cardscategory.module.css';
 import CardCategory from './cardcategory/cardcategory';
+import { montserrat } from '../fonts';
 
 export default function CardsCategory(){
     const category = [{
@@ -15,12 +16,12 @@ export default function CardsCategory(){
       },
       {
         id: 3,
-        img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/cpu_aiplu2.png',
+        img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807040/cpu3_fcg4as.png',
         name: 'CPUs'
       },
       {
         id: 4,
-        img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/laptop_igtag0.png',
+        img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708809448/cropped3_tikrfq.png',
         name: 'Laptops'
       },
       {
@@ -30,7 +31,7 @@ export default function CardsCategory(){
       },
       {
         id: 6,
-        img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/tarjetagrafica_u1u2yv.png',
+        img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708805538/tarjetagrafica2_sprphn.png',
         name: 'Tarjetas de video'
       },
       {
@@ -45,7 +46,7 @@ export default function CardsCategory(){
       },
       {
         id: 9,
-        img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733826/smartphone_s8rs7u.png',
+        img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807476/cropped2_bxpo8c.png',
         name: 'Smartphones'
       },
       {
@@ -53,11 +54,11 @@ export default function CardsCategory(){
         img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/audio_sjyb5v.png',
         name: 'Audio'
       },
-      {
-        id: 11,
-        img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733827/tablet_ts9x4g.png',
-        name: 'Tablets'
-      },
+      // {
+      //   id: 11,
+      //   img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733827/tablet_ts9x4g.png',
+      //   name: 'Tablets'
+      // },
     ]
     interface CategoryProps{
       category:{
@@ -68,9 +69,11 @@ export default function CardsCategory(){
     };
 
     return(
-        <div>
-            <h1>Categorias</h1>
+      <div className = "flex flex-col items-center justify-center m-30">
+        <h1 className={`${montserrat.className}`} style={{ fontSize: '40px', padding: '2vh', marginTop:'2vh' }}>Categorias</h1>
+        <div className = " w-90vw flex justify-evenly items-center flex-wrap content-start mx-10">
             { category?.map((element) => <CardCategory key = {element.id} name = {element.name} image = {element.img} />)}
+        </div>
         </div>
     );
 }
