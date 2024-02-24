@@ -10,6 +10,7 @@ import { decrement, increment } from "@/redux/features/counterSlice";
 import { useGetUsersQuery } from "@/redux/services/getUser";
 import CardsCategory from "./ui/cardscategory/cardscategory";
 import NavBar from "./ui/navbar/NavBar";
+import Footer from "./ui/footer/Footer";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
@@ -30,7 +31,7 @@ export default function Home() {
       <div className = {styles.divCategorias}>
       <CardsCategory />
       </div>
-      <h2>{count}</h2>
+      {/* <h2>{count}</h2>
     <button onClick={()=>{
       dispatch(increment())
     }}>
@@ -41,7 +42,8 @@ export default function Home() {
       dispatch(decrement())
     }}>
       decrement
-    </button>
+    </button> */}
+    <Footer />
     </div>
   );
 }
