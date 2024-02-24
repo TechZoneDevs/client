@@ -8,6 +8,7 @@ import banner from '../public/logos/bannerGif.gif'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { decrement, increment } from "@/redux/features/counterSlice";
 import { useGetUsersQuery } from "@/redux/services/getUser";
+import CardsCategory from "./ui/cardscategory/cardscategory";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
@@ -21,10 +22,8 @@ export default function Home() {
   return (
     <div className = {styles.holeContainer}>
       <Image src={banner} alt = 'Banner' width = {1150} height = {400}/>
-      <div className = {styles.pruebaColor}>
-        <h1>
-          Color Prueba
-        </h1>
+      <div className = {styles.divCategorias}>
+      <CardsCategory />
       </div>
       <h2>{count}</h2>
     <button onClick={()=>{
