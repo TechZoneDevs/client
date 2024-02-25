@@ -1,4 +1,3 @@
-
 import styles from './NavBar.module.css';
 import React from 'react';
 import Link from "next/link";
@@ -15,30 +14,32 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function NavBar() {
     return (
         <div className={styles.navBarContainer}>
-            <div className={styles.divLogo}>
+            <div className={styles.logoContainer}>
                 <Link href={'/'}>
-                    <Image src= {menuLogo} alt='menu Logo' height={100} width={100} />
+                    <Image src={menuLogo} className={styles.menuLogo} alt='menu Logo' height={40} width={40} />
                 </Link>
                 <Link href={'/'}>
-                <h1 className={`${montserrat.className} hover:text-shadow-white`} style={{ fontSize: '18px' }}>
-    Tech <span className="relative">
-      <span className="text-black bg-purple-500 p-1 rounded-tl-lg rounded-br-lg">Zone</span>
-    </span>
+  <h1 className={`${montserrat.className}`} style={{marginLeft: '5px', color: 'white', fontSize: '14px' }}>
+    Tech 
+      <span className={styles.techText}>Zone</span>
+    
   </h1>
-                </Link>
-            </div>
-            <div>
-                <input type='text' placeholder='Busca un producto' className = "w-[380px] h-[40px] rounded-[30px] p-5 text-black"/>
-                <h2><SearchIcon /></h2>
-            </div>
-            <div className ="flex items-center justify-center gap-8">            
-          
-            <Link href={'/search'}><h2 className = {`${montserrat.className}`} style={{ fontSize: '18px' }}>Productos</h2></Link>
-            <Link href={'/profile'}><h2 className = {`${montserrat.className}`} style={{ fontSize: '18px' }}><AccountCircleIcon />Perfil</h2></Link>
-            <Link href={'/carrito'}><Image src= {carritoLogo} alt='menu Logo' height={80} width={80} /></Link>
+</Link>
 
-           
-            
+            </div>
+            <div className={styles.searchContainer}>
+             <SearchIcon className={styles.searchIcon} />
+                 <input type='text' placeholder='Busca un producto' className={`${styles.searchInput} text-black`} />
+            </div>
+
+            <div className={styles.navLinksContainer}>
+            <Link href="/search" className={`${montserrat.className} ${styles.navLink}`}>
+ <p className={styles.textBtn}>Productos</p>
+    
+ 
+</Link>
+                <Link href={'/profile'}><AccountCircleIcon className={styles.profileIcon} /></Link>
+                <Link href={'/carrito'}><Image src={carritoLogo} alt='carrito Logo' height={40} width={40} className={styles.carritoIcon} /></Link>
             </div>
         </div>
     )

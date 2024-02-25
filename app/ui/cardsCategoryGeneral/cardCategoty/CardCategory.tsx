@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cardcategory.module.css';
+import styles from './card.module.css';
 import Image from 'next/image';
 import { montserrat } from '../../fonts';
 
@@ -8,9 +8,18 @@ export default function CardCategory({name, image}: {name: string, image: string
         <div className = {styles.cardCategory}>
                 <Image src = {image} alt = 'categoria' height = {120} width = {200} className = {styles.img}/>
             
-            <h1 className={`${montserrat.className} ${styles.textCategory}`} style={{ fontSize: '14px' }} >
-                {name}
-            </h1>
+                <h1 
+    className={` ${montserrat.className} ${styles.textCategory} bg-black p-1 rounded-lg text-white border-2 border-white transition duration-300 ease-in-out hover:shadow-custom`} 
+    style={{ 
+        fontSize: '18px',
+        boxShadow: '0px 0px 10px 2px rgb(225, 0, 255)',
+    }} 
+>
+    {name}
+</h1>
+
+
+
             
         </div>
     );

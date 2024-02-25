@@ -8,7 +8,8 @@ import banner from '../public/logos/bannerGif.gif'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { decrement, increment } from "@/redux/features/counterSlice";
 import { useGetUsersQuery } from "@/redux/services/getUser";
-import CardsCategory from "./ui/cardscategory/cardscategory";
+import CardsCategory from "./ui/cardscategory/Cardscategory";
+import CardsGenerales from "./ui/cardsCategoryGeneral/CardsCategory";
 import NavBar from "./ui/navbar/NavBar";
 import Footer from "./ui/footer/Footer";
 
@@ -24,10 +25,17 @@ export default function Home() {
   return (
     <div className = {styles.holeContainer}>
       <NavBar />
-      <div className ={styles.divOne}>
-
-      </div>
+      <div className={styles.divOne}>
+  <p className={styles.texto}>Bienvenido a TechZone, la zona más tecnológica que existe.</p>
+  <div>
+  <button className={styles.boton1}><a href="./subhtml/login.html">Categorias</a></button>
+  <button className={styles.boton2}><a href="./subhtml/login.html">About</a></button>
+</div>
+</div>
       {/* <Image src={banner} alt = 'Banner' width = {1150} height = {400}/> */}
+      <div className = {styles.divCategorias}>
+        <CardsGenerales/>
+      </div>
       <div className = {styles.divCategorias}>
       <CardsCategory />
       </div>
