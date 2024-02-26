@@ -23,3 +23,12 @@
     height: 70vh;
     opacity: 0.5;
 }
+
+.divOneText{
+    background-color: rgba(0, 0, 0, 0.719);
+    padding: 3vh;
+    border-radius: 55px;
+    font-size: 35px;
+    color: white;
+    z-index: 4;
+}

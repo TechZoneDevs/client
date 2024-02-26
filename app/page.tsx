@@ -25,6 +25,7 @@ export default function Home() {
     <div className = {styles.holeContainer}>
       <NavBar />
       <div className ={styles.divOne}>
+        <h1 className ={`${styles.divOneText} ${montserrat.className}`}>Tus componentes gaming en un solo lugar</h1>
 
       </div>
       {/* <Image src={banner} alt = 'Banner' width = {1150} height = {400}/> */}
