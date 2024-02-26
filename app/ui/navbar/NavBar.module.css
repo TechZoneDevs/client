@@ -1,25 +1,109 @@
-.navBarContainer{
-    background-color: rgba(32, 32, 32, 0.93);
+.navBarContainer {
+    background-color: rgba(32, 32, 32);
     z-index: 3;
     position: fixed;
     top: 0px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 65vw;
-    height: 90px;
+    height: 50px; /* Reducir la altura */
     border-radius: 0px 0px 20px 20px;
-    padding: 20px;
+    padding: 10px; /* Reducir el padding */
     box-shadow: 0px 0px 10px 0px rgb(179, 15, 255);
+
 }
 
-.divLogo{
+.logoContainer {
     display: flex;
-    place-items: center;
+    align-items: center;
 }
 
-.montserrat:hover{
-    font-size: 30px;
-    text-shadow: white 1px 0 10px;
+.logoText {
+    margin-left: 10px;
+}
+
+.searchContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.searchInput {
+    width: 300px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 5px;
+    padding-right: 40px; /* Ajusta el padding derecho para dejar espacio para el icono */
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta la posición derecha */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.navLinksContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(214, 205, 205);
+}
+
+.navLink {
+   padding: 3px;
+    background-color:rgb(179, 15, 255);
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .textBtn{
+    font-size: small;
+    color: rgb(255, 255, 255);
+  }
+  
+  .navLink:hover {
+    background-color: rgb(152, 48, 152);
+    box-shadow: 0px 0px 10px 0px rgb(179, 15, 255);
+  }
+
+
+
+.navLink {
+    font-size: 18px;
+}
+
+.profileIcon {
+    cursor: pointer;
+}
+
+.profileIcon:hover{
+    box-shadow: 0px 0px 10px 0px rgb(179, 15, 255);
+    border-radius: 50%;
+    color: rgb(217, 64, 238);
+}
+
+.carritoIcon:hover{
+     box-shadow: 0px 0px 10px 0px rgb(179, 15, 255);
+    border-radius: 50%;
+    border: 2px solid rgb(179, 15, 255);
+}
+
+.techText{
+    background-color: rgb(179, 15, 255);
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    padding: 5px;
+    margin-left: 3px;
+}
+
+.menuLogo:hover{
+    box-shadow: 0px 0px 10px 0px rgb(179, 15, 255);
+    border-radius: 50%;
+    border: 2px solid rgb(179, 15, 255);
 }

@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+  }
+  
+  .title {
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .productContainer {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: auto;
+  }
+  
+  .productContainer > * {
+    flex: 0 0 auto;
+  }
+  
