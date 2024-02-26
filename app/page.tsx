@@ -12,6 +12,7 @@ import CardsCategory from "./ui/cardscategory/Cardscategory";
 import CardsGenerales from "./ui/cardsCategoryGeneral/CardsCategory";
 import NavBar from "./ui/navbar/NavBar";
 import Footer from "./ui/footer/Footer";
+import CardsProductos from "./ui/cardsProductosMuestra/cardsProductosMuestra";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
@@ -32,10 +33,13 @@ export default function Home() {
   <button className={styles.boton2}><a href="./subhtml/login.html">About</a></button>
 </div>
 </div>
-      {/* <Image src={banner} alt = 'Banner' width = {1150} height = {400}/> */}
       <div className = {styles.divCategorias}>
         <CardsGenerales/>
       </div>
+      <div className = {styles.divCategorias}>
+        <CardsProductos/>
+      </div>
+      {/* <Image src={banner} alt = 'Banner' width = {1150} height = {400}/> */}
       <div className = {styles.divCategorias}>
       <CardsCategory />
       </div>
