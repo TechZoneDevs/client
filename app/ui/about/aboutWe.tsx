@@ -10,7 +10,7 @@ const aboutWe = () => {
         <div>
             <h3>Tecnologias utilizadas en este proyecto</h3>
             <div>
-
+                aca agregar imagenes de todas las tecnologias usadas
             </div>
         </div>
     <div>
@@ -23,7 +23,8 @@ const aboutWe = () => {
             <p>Somos un equipo de desarrolladores egresados en soyHenry que estan en busca de conseguir un trabajo a tiempo completo como desarrolladores</p>
         </div>
     </div>
-    <div>
+    <div> 
+        en cada card agregar: Imagen de la persona, tecnologias que maneja, en que estuvo (back, front, full stack) y link de su linkedin
         <div>Card Aquiles</div>
         <div>Card Nico</div>
         <div>Card Leo</div>
