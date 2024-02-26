@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import CardProducto from './cardProductoMuestra/cardProducto';
 import styles from './cardsProductosMuestra.module.css';
 
@@ -27,41 +28,61 @@ export default function CardsProductos() {
       name: 'Laptops'
     },
     {
-      id: 6,
+      id: 5,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708805538/tarjetagrafica2_sprphn.png',
       name: 'Tarjetas de video'
     },
     {
-      id: 8,
+      id: 6,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/monitor_uygmet.png',
       name: 'Monitores'
     },
     {
-      id: 9,
+      id: 7,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807476/cropped2_bxpo8c.png',
       name: 'Smartphones'
     },
     {
-      id: 10,
+      id: 8,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/audio_sjyb5v.png',
       name: 'Audio'
     },
     {
-      id: 11,
+      id: 9,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733827/tablet_ts9x4g.png',
       name: 'Tablets'
     },
   ];
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 5;
+
+  const totalPages = Math.ceil(productos.length / productsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage(prev => Math.max(prev - 1, 1));
+  };
+
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = Math.min(startIndex + productsPerPage, productos.length);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        Nuestros mejores productos
+        Auriculares a la venta
       </div>
       <div className={styles.productContainer}>
-        {productos.map((element) => (
-          <CardProducto key={element.id} name={element.name} image={element.img} />
+        {productos.slice(startIndex, endIndex).map((producto) => (
+          <CardProducto key={producto.id} name={producto.name} image={producto.img} />
         ))}
+      </div>
+      <div className={styles.pagination}>
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>Siguiente</button>
       </div>
     </div>
   );

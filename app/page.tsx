@@ -39,7 +39,7 @@ export default function Home() {
       <div className = {styles.divCategorias}>
         <CardsProductos/>
       </div>
-      {/* <Image src={banner} alt = 'Banner' width = {1150} height = {400}/> */}
+      {/* Agregar Carrousel de imagenes(Banners) */}
       <div className = {styles.divCategorias}>
       <CardsCategory />
       </div>

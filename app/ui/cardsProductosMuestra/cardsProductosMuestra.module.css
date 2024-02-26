@@ -13,12 +13,13 @@
     font-weight: bold;
   }
   
-  .product-container {
+  .productContainer {
     display: flex;
     overflow-x: auto;
+    scrollbar-width: auto;
   }
   
-  .product-container > * {
+  .productContainer > * {
     flex: 0 0 auto;
   }
   

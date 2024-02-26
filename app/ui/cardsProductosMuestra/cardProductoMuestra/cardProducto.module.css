@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    width: 400px;
+    width: 200px;
     height: 230px;
     margin: 20px;
     color: white;
@@ -19,7 +19,7 @@
 
 }
 .img{
-  width: 400px;
+  width: 200px;
   min-height: 230px;
 }
 .divProducto{
