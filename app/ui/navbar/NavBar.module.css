@@ -80,6 +80,7 @@
 
 .profileIcon {
     cursor: pointer;
+    font-size: 30px;
 }
 
 .profileIcon:hover{

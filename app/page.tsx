@@ -14,6 +14,7 @@ import NavBar from "./ui/navbar/NavBar";
 import Footer from "./ui/footer/Footer";
 import CardsProductos from "./ui/cardsProductosMuestra/cardsProductosMuestra";
 import Carrousel from "./ui/carrousel/Carrousel";
+import AboutWe from "./ui/about/AboutWe";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
@@ -54,9 +55,15 @@ interface CarouselProps {
       <div className = {styles.divCategorias}>
       <Carrousel images={images} />
     </div>
-    <div className = {styles.divCategorias}>
-      <CardsCategory />
-      </div>
+  <div className={styles.divCategorias3}>
+    <CardsCategory />
+  </div>
+  <div className="lineaDiagonalContainer">
+    <div className="lineaDiagonal"></div>
+  </div>
+  <div className={styles.divAbout}>
+    <AboutWe />
+</div>
 
       {/* <h2>{count}</h2>
     <button onClick={()=>{

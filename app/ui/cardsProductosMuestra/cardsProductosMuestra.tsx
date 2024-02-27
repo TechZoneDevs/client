@@ -91,7 +91,7 @@ export default function CardsProductos() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        Productos más populares
+        Laptops a la venta!
       </h1>
       <div className={styles.productContainer}>
         {productos.slice(startIndex, endIndex).map((producto) => (

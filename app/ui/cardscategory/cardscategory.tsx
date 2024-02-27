@@ -60,7 +60,7 @@ export default function CardsCategory(){
 
     return(
       <div className = "flex flex-col items-center justify-center m-30">
-        <div className = " w-90vw flex justify-evenly items-center flex-wrap content-start mx-10">
+        <div className = " w-90vw flex justify-evenly h-40vh mb-40 items-center flex-wrap content-start mx-10">
             { category?.map((element) => <CardCategory key = {element.id} name = {element.name} image = {element.img} />)}
         </div>
         </div>

@@ -1,0 +1,96 @@
+.container{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin-top: 40px;
+}
+
+.containerTech {
+  position: relative; /* Establece el contenedor como posición relativa */
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  background-color: #333; /* Fondo gris medio oscuro */
+  padding: 20px; /* Espacio interno */
+  height: 400px; /* Altura del contenedor */
+  border-radius: 9px;
+}
+
+.containerTech > div:first-child {
+  width: 40%; /* Ancho del 50% */
+  height: 350px;
+  margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.containerTech > div:first-child img {
+  border: 1px solid rgb(225, 0, 255); /* Agrega borde a la imagen */
+  border-radius: 8px; /* Añade borde redondeado */
+  width: 100%; /* La imagen ocupa todo el ancho disponible del div */
+  height: 100%; /* La imagen ocupa todo el alto del div */
+  object-fit: cover; /* Ajusta el tamaño de la imagen */
+}
+
+.containerTech > div:last-child {
+  width: 50%; /* Ancho del 50% */
+}
+
+.containerTech h2 {
+  position: absolute; /* Establece el título como posición absoluta */
+  top: 35px; /* Ajusta la distancia desde la parte superior */
+  left: 68%; /* Centra horizontalmente el título */
+  transform: translateX(-40%); /* Centra el título correctamente */
+  margin-top: 0; /* Elimina el margen superior */
+  color: #fff; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+}
+
+.spanHenry{
+  color: yellow;
+}
+.spanHenry2{
+color: rgb(225, 0, 255);
+}
+
+.containerTech p {
+  margin: 0; /* Elimina el margen predeterminado */
+  color: #ccc; /* Color del texto */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.containerTecnologias{
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.card {
+  width: 300px;
+  height: 250px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para las tarjetas */
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.textInfo{
+  text-align: center;
+}

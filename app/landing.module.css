@@ -70,11 +70,54 @@
     transition: .4s;
   }
   
-  .divCategorias{
+  .divCategorias3{
+    position: relative; /* Establece una posición relativa para que los pseudoelementos puedan posicionarse correctamente */
     width: 100vw;
-    height: 45vh;
+    height: 60vh;
+    margin-bottom: 170px;
     display: flex;
     place-items: center;
+  }
+  .divCategorias{
+    position: relative; /* Establece una posición relativa para que los pseudoelementos puedan posicionarse correctamente */
+    width: 100vw;
+    height: 40vh;
+    margin-bottom: 60px;
+    display: flex;
+    place-items: center;
+  }
+
+  .divContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .lineaDiagonalContainer {
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 1px); /* Alineamos verticalmente el borde */
+    left: 0;
+  }
+  
+  .lineaDiagonal {
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background-color: black; /* Color del borde */
+    transform: rotate(-45deg); /* Rotamos el borde */
+  }
+  
+  
+  
+
+  .divAbout {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    place-items: center;
+    background-color: rgb(196, 196, 196);
   }
 
   .divCategorias2{
@@ -84,3 +127,5 @@
     place-items: center;
     background-color: rgb(196, 196, 196);
   }
+
+  
