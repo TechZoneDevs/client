@@ -70,4 +70,17 @@
     transition: .4s;
   }
   
-  
+  .divCategorias{
+    width: 100vw;
+    height: 45vh;
+    display: flex;
+    place-items: center;
+  }
+
+  .divCategorias2{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    place-items: center;
+    background-color: rgb(196, 196, 196);
+  }

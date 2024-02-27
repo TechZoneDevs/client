@@ -47,16 +47,17 @@ interface CarouselProps {
       <div id="category" className = {styles.divCategorias}>
         <CardsGenerales/>
       </div>
-      <div className = {styles.divCategorias}>
+      <div className = {styles.divCategorias2}>
         <CardsProductos/>
       </div>
       {/* Agregar Carrousel de imagenes(Banners) */}
-      <div className="flex justify-center items-center h-screen">
+      <div className = {styles.divCategorias}>
       <Carrousel images={images} />
     </div>
-      <div className = {styles.divCategorias}>
+    <div className = {styles.divCategorias}>
       <CardsCategory />
       </div>
+
       {/* <h2>{count}</h2>
     <button onClick={()=>{
       dispatch(increment())

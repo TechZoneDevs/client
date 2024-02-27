@@ -10,48 +10,66 @@ export default function CardsProductos() {
     {
       id: 1,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/teclado_dx8rko.png',
-      name: 'Teclados'
+      name: 'Teclado Nyvara',
+      marca: 'Razer',
+      precio: 120
     },
     {
       id: 2,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/mouse_pubjux.png',
-      name: 'Mouses'
+      name: 'Mouse L201',
+      marca: 'Logitech',
+      precio: 80
     },
     {
       id: 3,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807040/cpu3_fcg4as.png',
-      name: 'CPUs'
+      name: 'CPU Gamer',
+      marca: 'Corsair',
+      precio: 1500
     },
     {
       id: 4,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708809448/cropped3_tikrfq.png',
-      name: 'Laptops'
+      name: 'Alienware',
+      marca: 'Dell',
+      precio: 2000
     },
     {
       id: 5,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708805538/tarjetagrafica2_sprphn.png',
-      name: 'Tarjetas de video'
+      name: 'GeForce RTX 3070',
+      marca: 'Nvidia',
+      precio: 500
     },
     {
       id: 6,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733824/monitor_uygmet.png',
-      name: 'Monitores'
+      name: 'Monitor Gaming 75Hz',
+      marca: 'Teros',
+      precio: 400
     },
     {
       id: 7,
       img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807476/cropped2_bxpo8c.png',
-      name: 'Smartphones'
+      name: 'Iphone 14 Pro Black',
+      marca: 'Apple',
+      precio: 3000
     },
     {
       id: 8,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/audio_sjyb5v.png',
-      name: 'Audio'
+      name: 'Audifonos BlackShark',
+      marca: 'Razer',
+      precio: 450
     },
     {
       id: 9,
       img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733827/tablet_ts9x4g.png',
-      name: 'Tablets'
-    },
+      name: 'Ipad Pro',
+      marca: 'Apple',
+      precio: 1600
+    }
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -72,12 +90,12 @@ export default function CardsProductos() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        Auriculares a la venta
-      </div>
+      <h1 className={styles.title}>
+        Productos más populares
+      </h1>
       <div className={styles.productContainer}>
         {productos.slice(startIndex, endIndex).map((producto) => (
-          <CardProducto key={producto.id} name={producto.name} image={producto.img} />
+          <CardProducto key={producto.id} name={producto.name} marca = {producto.marca} image={producto.img} precio = {producto.precio}/>
         ))}
       </div>
       <div className={styles.pagination}>
