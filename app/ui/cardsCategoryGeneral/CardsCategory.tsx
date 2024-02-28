@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './cardscategory.module.css';
+import styles from './CardsCategory.module.css';
 import CardCategory from './cardCategoty/CardCategory'
 import { montserrat } from '../fonts';
 
@@ -35,10 +35,8 @@ export default function CardsCategory(){
     };
 
     return(
-      <div className = "w-screen flex items-center mt-10 mb-0 justify-center" style = {{paddingTop: '10vh'}}>
-        <div className = " w-90vw flex content-center items-center">
+        <div className = {styles.divOne}>
             { category?.map((element) => <CardCategory key = {element.id} name = {element.name} image = {element.img} />)}
-        </div>
         </div>
     );
 }

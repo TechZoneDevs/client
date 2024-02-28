@@ -1,4 +1,27 @@
-.container{
-    height: 300px;
+.mainContainer{
+    height: 40vh;
     width: 100vw;
+}
+.sliderContainer{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+.imagesContainer{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    overflow: hidden;
+
+}
+.image{
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dotsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

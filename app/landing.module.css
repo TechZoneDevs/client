@@ -1,5 +1,6 @@
 .holeContainer{
     background-color: rgb(196, 196, 196);
+    background-color: rgb(30, 30, 30);
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -81,7 +82,15 @@
   .divCategorias{
     position: relative; /* Establece una posición relativa para que los pseudoelementos puedan posicionarse correctamente */
     width: 100vw;
-    height: 40vh;
+    height: 35vh;
+    margin-bottom: 60px;
+    display: flex;
+    place-items: center;
+  }
+
+  .divCategoriasCarrusel{
+    width: 80vw;
+    height: 45vh;
     margin-bottom: 60px;
     display: flex;
     place-items: center;
@@ -121,11 +130,13 @@
   }
 
   .divCategorias2{
-    width: 100vw;
+    width: 80vw;
     height: 50vh;
     display: flex;
-    place-items: center;
-    background-color: rgb(196, 196, 196);
+    justify-content: center;
+    align-items: center;
+    border-top: white;
+    border-style: solid;
   }
 
   

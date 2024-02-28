@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import CardProducto from './cardProductoMuestra/cardProducto';
 import styles from './cardsProductosMuestra.module.css';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 import { montserrat } from '../fonts';
 
@@ -93,14 +95,14 @@ export default function CardsProductos() {
       <h1 className={styles.title}>
         Laptops a la venta!
       </h1>
+      <div className={styles.pagination}>
+      <button onClick={handlePrevPage} disabled={currentPage === 1}><ArrowBackIosNewIcon/></button>
       <div className={styles.productContainer}>
         {productos.slice(startIndex, endIndex).map((producto) => (
           <CardProducto key={producto.id} name={producto.name} marca = {producto.marca} image={producto.img} precio = {producto.precio}/>
         ))}
       </div>
-      <div className={styles.pagination}>
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>Siguiente</button>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}><ArrowForwardIosIcon/></button>
       </div>
     </div>
   );
