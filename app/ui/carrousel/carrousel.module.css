@@ -1,5 +1,5 @@
 .mainContainer{
-    height: 40vh;
+    height: 300px;
     width: 100vw;
 }
 .sliderContainer{
@@ -10,12 +10,11 @@
 .imagesContainer{
     width: 100%;
     height: 100%;
-    border: 1px solid black;
     overflow: hidden;
 
 }
 .image{
-    height: auto;
+    height: 300px;
     width: 100%;
     border-radius: 5px;
 }
@@ -24,4 +23,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.ul, .li{
+    list-style: none;
+  white-space: nowrap;
+
+}
+
+.li{
+    display: inline;
 }

@@ -1,6 +1,7 @@
 .holeContainer{
-    background-color: rgb(196, 196, 196);
-    background-color: rgb(30, 30, 30);
+    /* background-color: rgb(196, 196, 196);
+    background-color: rgb(30, 30, 30); */
+    background: linear-gradient(to bottom, rgb(0, 0, 0)40%, rgb(126, 0, 126) 100%);
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -90,7 +91,7 @@
 
   .divCategoriasCarrusel{
     width: 80vw;
-    height: 45vh;
+    height: auto;
     margin-bottom: 60px;
     display: flex;
     place-items: center;

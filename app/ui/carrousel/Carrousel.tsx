@@ -4,21 +4,9 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CircleIcon from '@mui/icons-material/Circle';
 
-const Carrousel = () => {
-  const listRef = useRef<HTMLUListElement | null>(null);
-  const [currentIndex, setCurrentIndex ] = useState(0);
+interface CarrouselProps {};
 
-  useEffect(() => {
-    const listNode = listRef.current;
-    const imagenNode = listNode?.querySelectorAll("li > img")[currentIndex];
-    if (imagenNode) {
-      imagenNode.scrollIntoView({
-        behavior: 'smooth'
-      });
-    };
-
-  }, [currentIndex]);
-
+const Carrousel = ({}: CarrouselProps) => {
   const images = [
     {
       id: 1,
@@ -52,6 +40,28 @@ const Carrousel = () => {
     };
   };
 
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const [currentIndex, setCurrentIndex ] = useState(0);
+
+  const goToSlide = function(index: number){
+    console.log(index);
+    setCurrentIndex(index);
+  }
+
+  useEffect(() => {
+    const listNode = listRef.current;
+    console.log(listNode);
+    const imageNode = listNode?.querySelectorAll("li > img")[currentIndex];
+    console.log(imageNode);
+    if (imageNode) {
+      imageNode.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }, [currentIndex, goToSlide]);
+
+
+
   const scrollToImage = function(direction: string){
     if(direction == 'prev'){
       setCurrentIndex(current => {
@@ -59,40 +69,39 @@ const Carrousel = () => {
         return isFirstSlide ? 0 : current -1;
       });
     } else {
-      const isLastSlite = currentIndex === images.length - 1;
-      if (!isLastSlite){
+      const isLastSlide = currentIndex === images.length - 1;
+      if (!isLastSlide){
         setCurrentIndex( curr => curr + 1);
       }
     }
 
   }
-  const goToSlide = function(index: number){
-    setCurrentIndex(index);
-  }
+
 
 
   return (
     <div className={styles.mainContainer}>
       <div className = {styles.sliderContainer}>
-        <div className = {styles.leftArrow} onClick = {() => scrollToImage('prev')}><ArrowBackIosNewIcon /></div>
-        <div className = {styles.rightArrow} onClick = {() => scrollToImage('next')}><ArrowForwardIosIcon /></div>
         <div className = {styles.imagesContainer}>
-        <ul ref= {listRef}> 
+        <ul ref= {listRef} className = {styles.ul}> 
         {images.map((element) => {
-          return <li key = {element.id}>
-            <img src = {element.img} className = {styles.image} alt = 'banner'/>
+          return <li key = {element.id} className = {styles.li}>
+            <img src = {element.img} className = {styles.image} height= {300} width = {800} alt = 'banner'/>
           </li>
         })}
         </ul>
           
         </div>
         <div className = {styles.dotsContainer}>
+        <div className = {styles.leftArrow} onClick = {() => scrollToImage('prev')}><ArrowBackIosNewIcon /></div>
           { images.map((_, index: number) => (
             <div className = {styles.dot} onClick = {() => goToSlide(index)} key = {index}>
               <CircleIcon sx = {{ height: '10px', cursor: 'pointer'}}/>
             </div>
           ))
           }
+                  
+        <div className = {styles.rightArrow} onClick = {() => scrollToImage('next')}><ArrowForwardIosIcon /></div>
         </div>
       </div>
     </div>

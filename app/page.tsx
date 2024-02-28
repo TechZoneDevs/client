@@ -15,6 +15,7 @@ import Footer from "./ui/footer/Footer";
 import CardsProductos from "./ui/cardsProductosMuestra/cardsProductosMuestra";
 import Carrousel from "./ui/carrousel/Carrousel";
 import AboutWe from "./ui/about/AboutWe";
+import CarrouselTwo from "./ui/carrouselTwo/CarrouselTwo";
 
 export default function Home() {
   const count = useAppSelector(state => state.counterReducer.counter)
@@ -45,9 +46,8 @@ export default function Home() {
       <div className = {styles.divCategorias2}>
         <CardsProductos/>
       </div>
-      {/* Agregar Carrousel de imagenes(Banners) */}
-      <div className = {styles.divCategoriasCarrusel}>
-      <Carrousel />
+    <div className = {styles.divCategoriasCarrusel}>
+      <CarrouselTwo />
     </div>
   <div className={styles.divCategorias3}>
     <CardsCategory />
