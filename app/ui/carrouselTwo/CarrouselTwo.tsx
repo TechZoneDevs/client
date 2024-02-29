@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './CarrouselTwo.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import CircleIcon from '@mui/icons-material/Circle';
 
 export default function CarrouselTwo(){
     const [ slide, setSlide ] = useState(0);
@@ -41,6 +40,8 @@ export default function CarrouselTwo(){
         };
       };
 
+
+
       const nextSlide = function(){
         setSlide(slide === images.length - 1 ? 0 : slide + 1);
       }
@@ -48,6 +49,12 @@ export default function CarrouselTwo(){
       const prevSlide = function(){
         setSlide(slide === 0 ? images.length - 1 : slide - 1);
       }
+
+      useEffect(() => {
+        setTimeout(() => {
+          nextSlide();
+        }, 8000)
+      }, [slide]);
 
     return(
         <div className = {styles.holeContainer}>
@@ -59,7 +66,8 @@ export default function CarrouselTwo(){
             <ArrowForwardIosIcon sx = {{position: 'absolute', width: '2rem', height: '2rem', color: 'white', right: '1rem', cursor: 'pointer'}} onClick = {nextSlide}/>
             <span className = {styles.indicators}>
                 {images.map((item, index) => {
-                    return <div onClick = {() => setSlide(index)}className = {slide == index ? styles.indicator : styles.indicatorHidden}><CircleIcon key = {index} sx  = {{height: '10px', width: '10px', cursor: 'pointer',}}/></div>
+                    return <div onClick = {() => setSlide(index)}className = {slide == index ? styles.indicator : styles.indicatorHidden}>
+                      </div>
                 })}
             </span>
 

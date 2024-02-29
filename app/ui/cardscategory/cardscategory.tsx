@@ -37,12 +37,12 @@ export default function CardsCategory(){
       {
         id: 9,
         img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807476/cropped2_bxpo8c.png',
-        name: 'Smartphones'
+        name: 'Smartphoness'
       },
       {
         id: 10,
         img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/audio_sjyb5v.png',
-        name: 'Audio'
+        name: 'Audios'
       },
       // {
       //   id: 11,
@@ -59,10 +59,8 @@ export default function CardsCategory(){
     };
 
     return(
-      <div className = "flex flex-col items-center justify-center m-30">
-        <div className = " w-90vw flex justify-evenly h-40vh mb-40 items-center flex-wrap content-start mx-10">
+        <div className = {styles.divCategorias}>
             { category?.map((element) => <CardCategory key = {element.id} name = {element.name} image = {element.img} />)}
-        </div>
         </div>
     );
 }
