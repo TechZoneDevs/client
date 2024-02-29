@@ -66,7 +66,7 @@ export default function CarrouselTwo(){
             <ArrowForwardIosIcon sx = {{position: 'absolute', width: '2rem', height: '2rem', color: 'white', right: '1rem', cursor: 'pointer'}} onClick = {nextSlide}/>
             <span className = {styles.indicators}>
                 {images.map((item, index) => {
-                    return <div onClick = {() => setSlide(index)}className = {slide == index ? styles.indicator : styles.indicatorHidden}>
+                    return <div key = {index} onClick = {() => setSlide(index)}className = {slide == index ? styles.indicator : styles.indicatorHidden}>
                       </div>
                 })}
             </span>

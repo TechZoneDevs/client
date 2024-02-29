@@ -6,10 +6,12 @@ import { montserrat } from '../../fonts';
 export default function CardCategory({name, image}: {name: string, image: string}){
     return (
         <div className={styles.cardCategory}>
-            <Image src={image} alt='categoria' height={120} width={200} className={styles.img} />
-            <h1 className={`${montserrat.className} ${styles.textCategory}`} style={{ fontSize: '14px' }} >
+            <div className = {styles.imgContainer}>
+            <Image src={image} alt='categoria' height={130} width={130} className={styles.img} />
+            </div>
+            <h1 className={`${montserrat.className} ${styles.textCategory}`}>
                 {name}
             </h1>
         </div>
     );
-};
+}

@@ -27,7 +27,7 @@ export default function CardsCategory(){
       {
         id: 6,
         img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708805538/tarjetagrafica2_sprphn.png',
-        name: 'Tarjetas de video'
+        name: 'Graphics'
       },
       {
         id: 8,
@@ -37,12 +37,12 @@ export default function CardsCategory(){
       {
         id: 9,
         img: 'https://res.cloudinary.com/diswtvj50/image/upload/v1708807476/cropped2_bxpo8c.png',
-        name: 'Smartphoness'
+        name: 'Smartphones'
       },
       {
         id: 10,
         img: 'https://res.cloudinary.com/dphpu225t/image/upload/v1708733825/audio_sjyb5v.png',
-        name: 'Audios'
+        name: 'Audio'
       },
       // {
       //   id: 11,
