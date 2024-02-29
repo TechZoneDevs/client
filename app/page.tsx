@@ -24,10 +24,13 @@ export default function Home() {
     <div className={styles.holeContainer}>
       <NavBar />
       <div className={styles.divOne}>
-        <p className={styles.texto}>Bienvenido a TechZone, la zona más tecnológica que existe.</p>
-        <div>
+        <div className = {styles.cuadroInfo}>
+        <p className={`${montserrat.className}`} style = {{fontSize: '35px',  height: 'auto', fontWeight: '700', textAlign: 'center' }}>Bienvenido a Tech<span className = {styles.span1}>Zone</span></p>
+        <p className={`${montserrat.className}`} style = {{fontSize: '25px',  height: 'auto', fontWeight: '400', textAlign: 'center' }}>Todos tus componentes <span className = {styles.span1} style = {{fontWeight: '600'}}>Tech</span> en un solo lugar</p>
+        <div className = {styles.buttons}>
           <button className={styles.boton1}><a href="#category">Categorias</a></button>
           <button className={styles.boton2}><a href="./subhtml/login.html">Nosotros</a></button>
+        </div>
         </div>
       </div>
       <div id="category" className={styles.divCategorias}>
@@ -43,7 +46,7 @@ export default function Home() {
         <CardsCategory />
       </div>
       <div className={styles.divAbout}>
-        {/* <AboutWe /> */}
+        <AboutWe />
       </div>
       <Footer />
     </div>

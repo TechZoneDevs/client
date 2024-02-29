@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    border-radius: 5px;
     width: 200px;
     height: 230px;
     color: white;
@@ -11,8 +10,8 @@
     margin: 1vh;
     position: relative;
     padding: 8px; 
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 40%, rgb(255, 0, 247) 100%);
-    border-radius: 0 0 10px 10px; 
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 5%, rgb(128, 0, 123) 100%);
+    border-radius: 5px; 
   }
   
   .cardCategory:hover {

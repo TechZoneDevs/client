@@ -12,7 +12,7 @@ export default function CardCategory({name, image}: {name: string, image: string
     className={` ${montserrat.className} ${styles.textCategory} bg-black p-1 rounded-lg text-white border-2 hover:text-purple border-white transition duration-300 ease-in-out hover:shadow-custom`} 
     style={{ 
         fontSize: '16px',
-        borderRadius: '8px',
+        borderRadius: '3px',
     }} 
 >
     {name}
