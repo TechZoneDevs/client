@@ -1,7 +1,7 @@
 .holeContainer{
     /* background-color: rgb(196, 196, 196);
     background-color: rgb(30, 30, 30); */
-    background: linear-gradient(to bottom, rgb(0, 0, 0)40%, rgb(126, 0, 126) 100%);
+    background: linear-gradient(to bottom, rgb(0, 0, 0)20%, rgb(53, 0, 53) 100%);
     width: 100%;
     min-height: 100vh;
     height: auto;
@@ -75,8 +75,8 @@
   
   .divCategorias3{
     width: 80vw;
-    height: 120vh;
-    background-color: aqua;
+    height: auto;
+    padding: 2vh;
   }
   .divCategorias{
     position: relative; /* Establece una posición relativa para que los pseudoelementos puedan posicionarse correctamente */
@@ -90,7 +90,7 @@
   .divCategoriasCarrusel{
     width: 80vw;
     height: auto;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
     display: flex;
     place-items: center;
   }
@@ -105,10 +105,10 @@
   
   .divAbout {
     width: 100vw;
-    height: 50vh;
+    height: auto;
     display: flex;
-    place-items: center;
-    background-color: rgb(196, 196, 196);
+    align-items: center;
+    justify-content: center;
   }
 
   .divCategorias2{

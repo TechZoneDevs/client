@@ -1,0 +1,8 @@
+.containerFooter{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    background: linear-gradient(to bottom, rgb(28, 28, 28)10%, rgb(0, 0, 0) 100%);
+}

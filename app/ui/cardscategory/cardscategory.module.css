@@ -1,8 +1,10 @@
 .divCategorias{
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    background-color: aquamarine;
+    padding: 2vh;
 }

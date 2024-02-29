@@ -43,7 +43,7 @@ export default function Home() {
         <CardsCategory />
       </div>
       <div className={styles.divAbout}>
-        <AboutWe />
+        {/* <AboutWe /> */}
       </div>
       <Footer />
     </div>

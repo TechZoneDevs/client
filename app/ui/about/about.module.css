@@ -4,6 +4,7 @@
   justify-content: center;
   background-color: white;
   margin-top: 40px;
+  min-height: 100vh;
 }
 
 .containerTech {
