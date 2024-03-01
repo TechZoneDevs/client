@@ -8,13 +8,13 @@ import banner from '../public/logos/bannerGif.gif'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { decrement, increment } from "@/redux/features/counterSlice";
 import { useGetUsersQuery } from "@/redux/services/getUser";
-import CardsCategory from "./ui/cardscategory/Cardscategory";
+import CardsCategory from "./ui/cardscategory/cardscategory";
 import CardsGenerales from "./ui/cardsCategoryGeneral/CardsCategory";
 import NavBar from "./ui/navbar/NavBar";
 import Footer from "./ui/footer/Footer";
 import CardsProductos from "./ui/cardsProductosMuestra/cardsProductosMuestra";
 import Carrousel from "./ui/carrousel/Carrousel";
-import AboutWe from "./ui/about/AboutWe";
+import AboutWe from "./ui/about/aboutWe";
 import CarrouselTwo from "./ui/carrouselTwo/CarrouselTwo";
 
 export default function Home() {

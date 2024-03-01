@@ -19,11 +19,11 @@ export default function NavBar() {
                     <Image src={menuLogo} className={styles.menuLogo} alt='menu Logo' height={40} width={40} />
                 </Link>
                 <Link href={'/'}>
-                    <h1 className={`${montserrat.className}`} style={{ marginLeft: '5px', color: 'white', fontSize: '14px' }}>
-                        Tech
-                        <span className={styles.techText}>Zone</span>
+                <h1 className={`${montserrat.className} transition-all duration-300 ease-in-out transform hover:scale-105`} style={{ marginLeft: '5px', color: 'white', fontSize: '14px' }}>
+    Tech
+    <span className={styles.techText}>Zone</span>
+</h1>
 
-                    </h1>
                 </Link>
 
             </div>
