@@ -1,10 +1,15 @@
 'use client'
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Register from '../register/register';
 
-const Login = async () => {
+const Login = async ({login, setLogin}: {login: boolean, setLogin: boolean}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+
+    const [registrarse, setRegistrarse] = useState(false)
+
+    if(!login) return null
 
     const onSubmit = async (data: object) => {
        console.log('Data sumiteada')
@@ -14,8 +19,11 @@ const Login = async () => {
         setShowPassword(!showPassword);
     };
 
+    
+
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+            <button onClick={()=> setLogin(false)}>x</button>
             <div className="bg-white rounded-lg p-8 max-w-lg w-full">
                 <div className="mb-4 text-xl font-bold">Log in with your email</div>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -37,7 +45,14 @@ const Login = async () => {
                         Enviar
                     </button>
                 </form>
+                <div className="flex flex-col items-center justify-center">
+                <p className="text-lg mb-4">You not have an acount?</p>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out" onClick={()=>{
+                    setRegistrarse(true)
+                }}>Registrate</button>
             </div>
+            </div>
+            <Register registrarse={registrarse} setRegistrarse={setRegistrarse}/>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Carrito from '../ui/carrito/Carrito';
 
 type Product = {
     id: number;
@@ -66,55 +67,60 @@ const Detail = ({ id }: { id: number }) => {
     };
 
     return (
-        <div>
+        <div className="flex flex-wrap justify-center">
             {detailProduct && (
-                <div>
-                    <div>
+                <div className="flex flex-wrap justify-around items-center w-full md:w-3/4 p-4">
+                    <div className="w-full md:w-1/2">
                         {detailProduct.imgs.length > 1 &&
                             detailProduct.imgs.map((img, index) => (
-                                <div key={index}>
-                                    <img src={img} alt={`Image ${index}`} />
+                                <div key={index} className="mb-4">
+                                    <img src={img} alt={`Image ${index}`} className="w-full" />
                                 </div>
                             ))}
                     </div>
-                    <div>
-                        <h1>{detailProduct.name}</h1>
-                        <h3>{detailProduct.descuento}</h3>
-                        <h4>{detailProduct.marca}</h4>
-                        <p>{detailProduct.price}</p>
-                        <p>{detailProduct.stock}</p>
-                    </div>
-                    <div>
-                        <button onClick={handleDecrement}>-</button>
-                        <p>{cantidad}</p>
-                        <button onClick={handleIncrement}>+</button>
+                    <div className="w-full md:w-1/2 p-4">
+                        <h1 className="text-3xl font-bold mb-2">{detailProduct.name}</h1>
+                        <h3 className="text-xl mb-2">{detailProduct.descuento}</h3>
+                        <h4 className="text-lg mb-2">{detailProduct.marca}</h4>
+                        <p className="text-xl mb-2">{detailProduct.price}</p>
+                        <p className="text-xl mb-2">{detailProduct.stock}</p>
+                        <div className="flex items-center">
+                            <button onClick={handleDecrement} className="bg-gray-300 px-4 py-2 rounded-l">
+                                -
+                            </button>
+                            <p className="px-4 py-2">{cantidad}</p>
+                            <button onClick={handleIncrement} className="bg-gray-300 px-4 py-2 rounded-r">
+                                +
+                            </button>
+                        </div>
+                        <button>Agregar al carrito</button>
                     </div>
                 </div>
             )}
-            <div>
-                <div>
-                    <div>
+            <div className="flex flex-wrap justify-around items-center w-full md:w-3/4 p-4">
+                <div className="w-full md:w-1/2">
+                    <div className="flex items-center mb-4">
                         {vendedor && (
                             <>
-                                <img src={vendedor.img} alt={vendedor.name} />
-                                <h3>{vendedor.name}</h3>
+                                <img src={vendedor.img} alt={vendedor.name} className="w-16 h-16 rounded-full mr-4" />
+                                <h3 className="text-xl font-bold">{vendedor.name}</h3>
                             </>
                         )}
                     </div>
                     {location && (
-                        <>
-                            <h3>{location.city}</h3>
-                            <h4>{location.locacion}</h4>
-                        </>
+                        <div>
+                            <h3 className="text-xl">{location.city}</h3>
+                            <h4 className="text-lg">{location.locacion}</h4>
+                        </div>
                     )}
                 </div>
-                <div>
-                    <h3>{detailProduct?.description}</h3>
+                <div className="w-full md:w-1/2 p-4">
+                    <h3 className="text-lg">{detailProduct?.description}</h3>
                 </div>
             </div>
-            <div></div>
         </div>
     );
+    
 };
 
 export default Detail;

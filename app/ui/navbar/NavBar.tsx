@@ -1,5 +1,6 @@
+'use client'
 import styles from './NavBar.module.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
 import { montserrat } from './../fonts';
 import Image from 'next/image';
@@ -10,14 +11,21 @@ import carritoLogo from '../../../public/logos/carritoLogo.png'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
+import Carrito from '../carrito/Carrito';
 
 export default function NavBar() {
+    const [menu, setMenu] = useState(false)
+    const [carrito, setCarrito] = useState(false)
+
+
+
+
     return (
         <div className={styles.navBarContainer}>
             <div className={styles.logoContainer}>
-                <Link href={'/'}>
+                <button onClick={()=> setMenu(true)}>
                     <Image src={menuLogo} className={styles.menuLogo} alt='menu Logo' height={40} width={40} />
-                </Link>
+                    </button>
                 <Link href={'/'}>
                 <h1 className={`${montserrat.className} transition-all duration-300 ease-in-out transform hover:scale-105`} style={{ marginLeft: '5px', color: 'white', fontSize: '14px' }}>
     Tech
@@ -39,8 +47,10 @@ export default function NavBar() {
 
                 </Link>
                 <Link href={'/profile'}><AccountCircleIcon className={styles.profileIcon} /></Link>
-                <Link href={'/carrito'}><Image src={carritoLogo} alt='carrito Logo' height={40} width={40} className={styles.carritoIcon} /></Link>
+                <button onClick={()=> setCarrito(true)}><Image src={carritoLogo} alt='carrito Logo' height={40} width={40} className={styles.carritoIcon} />
+                </button>
             </div>
+            <Carrito carrito={carrito} setCarrito={setCarrito}/>
         </div>
     )
 }
