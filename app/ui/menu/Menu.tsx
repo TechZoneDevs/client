@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Register from '../register/register'
 
-const Menu = ({menu, setMenu}: {menu: boolean, setMenu: boolean}) => {
+const Menu = ({menu, setMenu}: {menu: boolean, setMenu: Function}) => {
     const [registrarse, setRegistrarse] = useState(false)
 
 

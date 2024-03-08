@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Login from '../login/login';
+import styles from './register.module.css'
 
-export default function Register({registrarse, setRegistrarse}: {registrarse: boolean, setRegistrarse: boolean}){
+export default function Register({registrarse, setRegistrarse}: {registrarse: boolean, setRegistrarse: Function}){
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [login, setLogin] = useState(false)
     const onSubmit = function(){
@@ -11,7 +12,7 @@ export default function Register({registrarse, setRegistrarse}: {registrarse: bo
     };
 
     return(
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div className={styles.holeModal}>
             
             <form onSubmit = {handleSubmit(onSubmit)} className="space-y-4">
                 <div>

@@ -16,13 +16,15 @@ import CardsProductos from "./ui/cardsProductosMuestra/cardsProductosMuestra";
 import Carrousel from "./ui/carrousel/Carrousel";
 import AboutWe from "./ui/about/aboutWe";
 import CarrouselTwo from "./ui/carrouselTwo/CarrouselTwo";
+import Login from "./ui/login/login";
 
 export default function Home() {
+  const [login, setLogin ] = useState(false);
   const count = useAppSelector(state => state.counterReducer.counter)
 
   return (
     <div className={styles.holeContainer}>
-      <NavBar />
+      <NavBar setLogin = {setLogin} login = {login}/>
       <div className={styles.divOne}>
         <div className = {styles.cuadroInfo}>
         <p className={`${montserrat.className}`} style = {{fontSize: '35px',  height: 'auto', fontWeight: '700', textAlign: 'center' }}>Bienvenido a Tech<span className = {styles.span1}>Zone</span></p>
@@ -33,6 +35,7 @@ export default function Home() {
         </div>
         </div>
       </div>
+      {login && <Login login = {login} setLogin = {setLogin}/>}
       <div id="category" className={styles.divCategorias}>
         <CardsGenerales />
       </div>

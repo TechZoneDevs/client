@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Carrito = ({carrito, setCarrito}: {carrito: boolean, setCarrito: boolean}) => {
+const Carrito = ({carrito, setCarrito}: {carrito: boolean, setCarrito: Function}) => {
 
     if(!carrito) return null
 
