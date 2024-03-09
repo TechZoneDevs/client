@@ -2,9 +2,13 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Register from '../register/register'
+import styles from './Menu.module.css'
+import MenuUserLogueado from './MenuUserLogueado/MenuUserLogueado'
+import MenuUserNotLogueado from './MenuUserNotLogueado/MenuUserNotLogueado'
 
 const Menu = ({menu, setMenu}: {menu: boolean, setMenu: Function}) => {
     const [registrarse, setRegistrarse] = useState(false)
+    const userLogueado = false;
 
 
     if(!menu) return null
@@ -12,12 +16,9 @@ const Menu = ({menu, setMenu}: {menu: boolean, setMenu: Function}) => {
     //agregar condicional de que si esta logueado que no aparezca el btn de registrarse y que aparezca uno como de deslogueo
 
   return (
-    <div>
-        <button onClick={()=> setMenu(false)}>x</button>
-        <Link href={'/ventas'} ><h3>Productos en venta</h3></Link>
-        <Link href={'/historial'} ><h3>Historial de compras</h3></Link>
-        <button onClick={()=> setRegistrarse(true)}>Registrate aqui</button>
-        <Register registrarse={registrarse} setRegistrarse={setRegistrarse}/>
+    <div className = {styles.holeModal}>
+        <button onClick={()=> setMenu(!menu)} className = {styles.closeBtn}>Close</button>
+        { userLogueado? <MenuUserLogueado /> : <MenuUserNotLogueado />}       
     </div>
   )
 }

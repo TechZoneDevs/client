@@ -15,6 +15,10 @@ export default function Register({registrarse, setRegistrarse}: {registrarse: bo
         <div className={styles.holeModal}>
             
             <form onSubmit = {handleSubmit(onSubmit)} className="space-y-4">
+                <div className = {styles.modalHeader}>
+                    <button onClick = {() => setRegistrarse(!registrarse)}> X </button>
+
+                </div>
                 <div>
                     <h1 className="mb-4 text-xl font-bold">
                         Create your account
@@ -55,11 +59,7 @@ export default function Register({registrarse, setRegistrarse}: {registrarse: bo
             </form>
             <div className="flex flex-col items-center justify-center">
                 <p className="text-lg mb-4">You alredy have an acount?</p>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out" onClick={()=>{
-                    setLogin(true)
-                }}>logueate</button>
             </div>
-            <Login login={login} setLogin={setLogin} />
         </div>
     );
 };

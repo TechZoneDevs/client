@@ -8,8 +8,6 @@ import logo from '../../../public/logos/Logo TechZone.png'
 import menuLogo from '../../../public/logos/menuNavBar.png'
 import carritoLogo from '../../../public/logos/carritoLogo.png'
 import Menu from '../menu/Menu';
-
-
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import Carrito from '../carrito/Carrito';

@@ -6,6 +6,7 @@
     width: 100vw;
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.766);
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,24 +17,131 @@
 .holeDiv{
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 300px;
     height: auto;
-    background-color: rgb(81, 81, 81);
+    background-color: rgba(36, 36, 36, 0.304);
+    border-radius: 5px;
+    backdrop-filter: blur(7px);
+    padding-bottom: 3vh;
 }
 .header{
     height: auto;
     width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 3vh;
+
 }
-.input{
+.closeBtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.549);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.closeBtn:hover{
+    background-color: rgb(57, 57, 57);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inputDiv{
     height: auto;
-    width: auto;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1vh;
+
+}
+
+.input{
+    color: black;
+    border-radius: 4px;
+    padding: 5px 7px;
+    font-size: 12px;
+    width: 100%;
+    font-family: montserrat;
+    font-weight: 700;
+   
+}
+.passwordDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 3px;
+}
+
+.inputPass{
+    color: black;
+    border-radius: 4px;
+    padding: 5px 7px;
+    font-size: 12px;
+    width: 90%;
+    font-family: montserrat;
+    font-weight: 700;
+   
+}
+.toggleBtn{
+    background-color: black;
+    width: 10%;
+    height: 31px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggleBtn:hover{
+    background: linear-gradient(to bottom, rgb(115, 0, 255), rgb(28, 28, 28));
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+    
 
 }
 .submitBtn{
-    height: auto;
-    width: auto;
+    font-family: montserrat;
+    background: linear-gradient(to bottom, rgb(28, 28, 28), rgb(0, 0, 0));
+    width: 205px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
 }
-.footer{
-    height: auto;
-    width: auto;
+.submitBtn:hover{
+    background: linear-gradient(to bottom, rgb(115, 0, 255), rgb(28, 28, 28));
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+}
+.error{
+    font-family: montserrat;
+    font-weight: 600;
+    color: red;
+    width: 100%;
+    font-size: 11px;
+    padding-top: 1vh;
+
+}
+.buttons{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }

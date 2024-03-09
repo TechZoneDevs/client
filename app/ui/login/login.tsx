@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Register from '../register/register';
 import styles from './login.module.css';
+import CloseIcon from '@mui/icons-material/Close';
+import { montserrat } from '../fonts';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import GoogleIcon from '@mui/icons-material/Google';
+
 
 const Login = ({login, setLogin}: {login: boolean, setLogin: Function}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -25,34 +30,46 @@ const Login = ({login, setLogin}: {login: boolean, setLogin: Function}) => {
     return (
         <div className = {styles.holeModal}>
             <div className={styles.holeDiv}>
-            <button onClick={()=> setLogin(!login)}>x</button>
-                <div className={styles.header}>Log in with your email</div>
+            
+                <div className={styles.header}>
+                    <h1 className = {`${montserrat.className}`} style = {{ fontSize: '20px'}}>Iniciar Sesion</h1>
+                    <button onClick={()=> setLogin(!login)} className = {styles.closeBtn}>
+                    <CloseIcon sx = {{ height: '20px', color: 'red'}}/>
+                    </button>
+                </div>
                 <form onSubmit={handleSubmit(onSubmit)} className= {styles.form}>
-                    <div className = {styles.input}>
-                        <label className={styles.label}>Email:</label>
+                    <div className = {styles.inputDiv}>
+                        <label className={`${montserrat.className}`} style = {{width: '100%', fontSize: '15px'}}>Correo</label>
                         <input type="text" {...register('correo', { required: true, maxLength: 20 })} className={styles.input} />
-                        {errors.correo?.type === "required" && <p className={styles.error}>This field is required</p>}
-                        {errors.correo?.type === "maxLength" && <p className={styles.error}>The max in the field is 20 characters</p>}
+                        {errors.correo?.type === "required" && <p className={styles.error}>Este campo es necesario</p>}
+                        {errors.correo?.type === "maxLength" && <p className={styles.error}>Máximo 20 caracteres</p>}
                     </div>
-                    <div className = {styles.input}>
-                        <label className={styles.label}>Password:</label>
-                        <input type={showPassword ? "text" : "password"} {...register('password', { required: true })} className={styles.input}  />
-                        {errors.password?.type === "required" && <p className={styles.error}>This field is required</p>}
+                    <div className = {styles.inputDiv}>
+                        <label className={`${montserrat.className}`} style = {{width: '100%', fontSize: '15px'}}>Contraseña</label>
+                        <div className = {styles.passwordDiv}>
+                        <input type={showPassword ? "text" : "password"} {...register('password', { required: true })} className={styles.inputPass}  />
+                        <button onClick={togglePasswordVisibility} className={styles.toggleBtn}>
+                        <VisibilityIcon sx = {{ height: '15px'}}/>
+                    </button>
+                        </div>
+                        {errors.password?.type === "required" && <p className={styles.error}>Este campo es necesario</p>}
                     </div>
-                    <button type="button" onClick={togglePasswordVisibility} className={styles.submitBtn}>
-                        {showPassword ? 'Hide' : 'Show'} Password
+                    <div className = {styles.buttons}>
+
+                    <button type="submit" className={styles.submitBtn}>
+                        Iniciar Sesion
                     </button>
-                    <button type="submit" value='enviar' className="bg-green-500 text-white px-4 py-2 rounded">
-                        Enviar
+                    <button type="submit" className={styles.submitBtn}>
+                        <GoogleIcon sx = {{height: '18px'}}/>
+                        Iniciar Sesion con Google
                     </button>
-                </form>
-                <div className={styles.footer}>
-                <p className="text-lg mb-4">You not have an acount?</p>
-                <button className={styles.registerBtn} onClick={()=>{
-                    setRegistrarse(true)
+                    <button className={styles.submitBtn} onClick={()=>{
+                    setRegistrarse(!registrarse);
+                    setLogin(!login);
                 }}>Registrate</button>
-            </div>
-            <Register registrarse={registrarse} setRegistrarse={setRegistrarse}/>
+                </div>
+                </form>
+            { registrarse && <Register registrarse={registrarse} setRegistrarse={setRegistrarse}/>}
             </div>
         </div>
     );
