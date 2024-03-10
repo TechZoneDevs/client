@@ -9,11 +9,11 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import GoogleIcon from '@mui/icons-material/Google';
 
 
-const Login = ({login, setLogin}: {login: boolean, setLogin: Function}) => {
+const Login = ({login, setLogin, registrarse, setRegistrarse}: {login: boolean, setLogin: Function, registrarse: boolean, setRegistrarse:Function}) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    const [registrarse, setRegistrarse] = useState(false)
+    
 
     if(!login) return null
 
@@ -21,7 +21,7 @@ const Login = ({login, setLogin}: {login: boolean, setLogin: Function}) => {
        console.log('Data sumiteada')
     };
 
-    const togglePasswordVisibility = () => {
+    const togglePasswordVisibility = (setShowPassword: Function, showPassword: boolean) => {
         setShowPassword(!showPassword);
     };
 
@@ -69,7 +69,6 @@ const Login = ({login, setLogin}: {login: boolean, setLogin: Function}) => {
                 }}>Registrate</button>
                 </div>
                 </form>
-            { registrarse && <Register registrarse={registrarse} setRegistrarse={setRegistrarse}/>}
             </div>
         </div>
     );

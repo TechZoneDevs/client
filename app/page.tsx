@@ -17,9 +17,13 @@ import Carrousel from "./ui/carrousel/Carrousel";
 import AboutWe from "./ui/about/aboutWe";
 import CarrouselTwo from "./ui/carrouselTwo/CarrouselTwo";
 import Login from "./ui/login/login";
+import Register from "./ui/register/register";
+import ForgotPassword from "./ui/forgotPassword/forgotPassowrd";
 
 export default function Home() {
   const [login, setLogin ] = useState(false);
+  const [registrarse, setRegistrarse] = useState(false)
+  const [forgotPassModal, setForgotPassModal] = useState(false);
   const count = useAppSelector(state => state.counterReducer.counter)
 
   return (
@@ -35,7 +39,10 @@ export default function Home() {
         </div>
         </div>
       </div>
-      {login && <Login login = {login} setLogin = {setLogin}/>}
+      {login && <Login login = {login} setLogin = {setLogin} registrarse = {registrarse} setRegistrarse= {setRegistrarse}/>}
+      {registrarse && <Register registrarse = {registrarse}  setRegistrarse = {setRegistrarse} forgotPassModal = {forgotPassModal} setForgotPassModal= {setForgotPassModal}/>}
+      {forgotPassModal && <ForgotPassword forgotPassModal = {forgotPassModal} setForgotPassModal = {setForgotPassModal}/>}
+      
       <div id="category" className={styles.divCategorias}>
         <CardsGenerales />
       </div>
